@@ -33,9 +33,9 @@
             app.views = Views;
         })
 
-        app.addInitializer(function(options){
-            Backbone.history.start({pushState: true});
-        })
+        app.on("start", function(options){
+            if (Backbone.history){  Backbone.history.start({pushState: true}); }
+        });
 
         app.strip = function(str) {
             return (str + '').replace(/\\(.?)/g, function (s, n1) {
