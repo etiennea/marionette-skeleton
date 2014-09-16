@@ -1,0 +1,10 @@
+{
+  "name": "voice_boilerplate",
+  "version": "0.0.1",
+  "dependencies": {
+    "requirejs": "latest",
+    "requirejs-text": "latest",
+    "marionette": "latest",
+    "modernizr": "~2.8.3"
+  }
+}
