@@ -3,39 +3,16 @@
  */
 
  /*global $*/
- define(
+ define('app',
 
     ['backbone',
-    'marionette',
-    'models',
-    'collections',
-    'templates',
-    'views'
+    'marionette'
     ],
 
-    function(Backbone, Marionette, Models, Collections, Templates, Views){
+    function(Backbone, Marionette){
         "use strict";
 
         var app = new Marionette.Application();
-
-        app.addInitializer(function(options){
-            app.baseUrl = api + '/1';
-            app.token = token;
-
-            app.addRegions({
-                header      : 'header',
-                main        : 'main',
-                footer      : 'footer'
-            });
-
-            app.models = Models;
-            app.collections = Collections;
-            app.views = Views;
-        })
-
-        app.on("start", function(options){
-            if (Backbone.history){  Backbone.history.start({pushState: true}); }
-        });
 
         app.strip = function(str) {
             return (str + '').replace(/\\(.?)/g, function (s, n1) {
